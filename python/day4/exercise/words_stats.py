@@ -1,4 +1,4 @@
-strings_to_process = [ "who is a question that reffer other people", "is to be or not to be , that is a good question"]
+strings_to_process = [ "who is a question that reffer other people", "is to be or not to be , that is a good question",'so good to be here or is it ?']
 
 
 
@@ -21,18 +21,21 @@ def print_dict_recurrency(dict) :
         print(f'\t\t{left_align_text}{right_align_text}')  
 
 sentences_statistics = {}
-for i in range(2) :
+for i in range(3) :
   sentences_statistics[i] = count_words(strings_to_process[i].split())
     
 print('first sentence statistics  : ')
+print_dict_recurrency(sentences_statistics[0])
+
+print('\nseccond sentence statistics :') 
 print_dict_recurrency(sentences_statistics[1])
 
-print('seccond sentence statistics :') 
-print_dict_recurrency(sentences_statistics[1])
+print('\nThird  sentence statistics :') 
+print_dict_recurrency(sentences_statistics[2])
 
 
-print(f'common values : {sentences_statistics[0].get("set_of_words") & sentences_statistics[1].get("set_of_words")  }')
-print(f'Diff values : {sentences_statistics[0].get("set_of_words") ^ sentences_statistics[1].get("set_of_words")  }')
+print(f'\nCommon values : {sentences_statistics[0].get("set_of_words") & sentences_statistics[1].get("set_of_words") & sentences_statistics[2].get("set_of_words") }')
+print(f'\nDiff values : {sentences_statistics[0].get("set_of_words") ^ sentences_statistics[1].get("set_of_words")  ^ sentences_statistics[2].get("set_of_words") }')
 
 
 
